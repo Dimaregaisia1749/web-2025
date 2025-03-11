@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles.css">
     <title>Login</title>
 </head>
 <body>
-    <div>
-        <div>
+    <div class="wrapper">
+        <div class="image">
             <h1>Войти</h1>
             <img src="src/LoginImage.png" alt="Login image">
         </div>
-        <div>
+        <div class="form">
             <form action="send">
-                <p>Электропочта</p>
+                <p class="info">Электропочта</p>
                 <input type="email" name="email">
-                <p>Введите электропочту в формате *****@***.**</p>
-                <p>Пароль</p>
+                <p class="tip">Введите электропочту в формате *****@***.**</p>
+                <p class="info">Пароль</p>
                 <input type="password" name="Password">
                 <input type="button" value="Продолжить">
             </form>

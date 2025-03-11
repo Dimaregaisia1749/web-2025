@@ -1,0 +1,148 @@
+:root {
+    --bg-color: white;
+    --text-color: #222222;
+    --edit-color: #808080;
+    --help-text: rgba(34, 34, 34, 0.5);
+    --count-bg: rgba(34, 34, 34, 0.5);
+    --count-text: white;
+}
+
+@font-face {
+    font-family: 'Golos UI';
+    src: url('src/Golos-UI_Regular.ttf');
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    padding: 20px 5px 20px 5px;
+}
+
+.navigation img {
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Golos UI';      
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    overflow: scroll;
+}
+
+.posts {
+    margin-top: 74px;
+    display: flex;
+    flex-direction: column;
+    width: 474px;
+}
+
+.posts img {
+    height: 100%;
+    width: auto;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.userdata {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.userdata .logo {
+    margin-right: 20px;
+}
+
+.userdata .edit {
+    height: 70%;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+.text {
+    font-size: 14px;
+    font-family: 'Golos UI';
+    font-weight: bold;
+}
+
+.contentwrapper {
+    position: relative;
+    max-height: 474px;
+    max-width: 474px;
+    padding: 10px 0px 10px 0px;
+}
+
+.contentwrapper .count {
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    margin: 0px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--count-bg);
+    color: var(--count-text);
+}
+
+.likes {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    align-items: center;
+}
+
+.likes img {
+    margin-right: 10px;
+}
+
+p.content {
+    max-height: 40px;
+    overflow: hidden;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.expand {
+    color: var(--help-text);
+    cursor: pointer;
+}
+
+.time {
+    color: var(--help-text);
+    font-size: 14px;
+}
+
+img.left, img.right {
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+}
+
+img.left {
+    left: 10px;
+}
+
+img.right {
+    right: 10px;
+}
