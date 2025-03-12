@@ -20,15 +20,14 @@
 }
 
 .navigation img {
-    cursor: pointer;
     margin-bottom: 5px;
 }
 
-body{
+body {
     height: 100vh;
     display: flex;
     flex-direction: row;
-    font-family: 'Golos UI';      
+    font-family: 'Golos UI';
     height: 100vh;
 }
 
@@ -37,7 +36,6 @@ body{
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    overflow: scroll;
 }
 
 .posts {
@@ -75,7 +73,6 @@ body{
     height: 70%;
     position: absolute;
     right: 0;
-    cursor: pointer;
 }
 
 .text {
@@ -122,7 +119,6 @@ p.content {
 
 .expand {
     color: var(--help-text);
-    cursor: pointer;
 }
 
 .time {
@@ -130,12 +126,12 @@ p.content {
     font-size: 14px;
 }
 
-img.left, img.right {
+img.left,
+img.right {
     height: auto;
     width: auto;
     position: absolute;
     top: 50%;
-    cursor: pointer;
 }
 
 img.left {

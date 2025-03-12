@@ -3,7 +3,7 @@
     --input-color: #F2F3F5;
     --btn-color: #222222;
     --text-color: #222222;
-    --hint-color: #808080;
+    --tip-color: #808080;
     --btn-text-color: white;
 }
 
@@ -27,10 +27,9 @@ body {
     background-color: var(--bg-color);
 }
 
-.image{
+.image {
     position: relative;
     margin-right: 100px;
-    display: inline-block;
 }
 
 .form {
@@ -64,7 +63,7 @@ input {
 }
 
 p.tip {
-    color: var(--hint-color);
+    color: var(--tip-color);
     font-size: 13px;
     margin-top: 0;
 }
@@ -77,5 +76,4 @@ input[type="button"] {
     text-align: center;
     padding: 5px;
     color: var(--btn-text-color);
-    cursor: pointer;
 }
