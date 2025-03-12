@@ -30,7 +30,6 @@ body{
     flex-direction: row;
     font-family: 'Golos UI';      
     height: 100vh;
-    overflow: hidden;
 }
 
 .wrapper {
