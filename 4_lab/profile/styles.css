@@ -1,6 +1,8 @@
-@font-face {
-    font-family: 'Golos UI Bold';
-    src: url('src/Golos-UI_Bold.ttf');
+:root {
+    --bg-color: white;
+    --text-color: rgba(34, 34, 34, 1);
+    --post-bg-color: rgba(242, 243, 245, 1);
+    --border-color: rgba(34, 34, 34, 0.05)
 }
 
 @font-face {
@@ -8,75 +10,77 @@
     src: url('src/Golos-UI_Regular.ttf');
 }
 
-.navigation {
-    display: flex;
-    flex-direction: column;
-    width: 40px;
-    padding: 20px 5px 20px 5px;
-}
-
-.navigation img {
-    margin-bottom: 5px;
-}
-
 body {
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
+    background-color: var(--bg-color);
     font-family: 'Golos UI';
 }
 
-.wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
+.navigation {
+    position: absolute;
+    width: 40px;
+    padding: 20px 5px 20px 5px;
+    height: 100%;
+    border-right: 1px solid var(--border-color)
+}
+
+.navigation-image {
+    margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .profile {
-    max-width: 70%;
-    width: 70%;
-    margin-top: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-left: 500px;
+    width: 1000px;
 }
 
 .logo {
-    width: 70px;
-    height: 70px;
+    object-fit: cover;
+    width: 123px;
+    height: 123px;
+    border-radius: 16px;
+    margin-left: 450px;
 }
 
-.text {
+.name {
+    font-weight: 500;
+    font-size: 32px;
+    margin: 0 0 10px 0;
     text-align: center;
-    font-size: 14px;
-    font-family: 'Golos UI';
+    color: var(--text-color);
 }
 
-#name {
-    font-size: 20px;
-    font-style: 'Golos UI Bold';
-    font-weight: bold;
+.description {
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--text-color);
+    width: 360px;
+    margin: 0 0 10px 0;
+    text-align: center;
+    margin-left: 330px;
 }
 
-#description {
-    width: 300px;
+.post-counter {
+    width: 100px;
+    height: 30px;
+    border-radius: 6px;
+    background-color: var(--post-bg-color);
+    margin: 0 0 40px 460px;
 }
 
-.counter {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.post-image {
+    margin: 6px 0 0 5px;
+    position: absolute;
 }
 
-.counter img {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+.post-text {
+    font-weight: 400;
+    position: absolute;
+    margin: 5px 0 0 30px;
+    font-size: 15px;
+    color: var(--text-color);
 }
 
 .posts {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
 }

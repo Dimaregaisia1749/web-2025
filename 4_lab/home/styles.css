@@ -1,7 +1,11 @@
 :root {
-    --help-text: rgba(34, 34, 34, 0.5);
-    --count-bg: rgba(34, 34, 34, 0.5);
+    --bg-color: white;  
+    --image-count-bg: rgba(34, 34, 34, 0.5);
+    --like-count-bg: rgba(34, 34, 34, 0.05);
+    --border-color: rgba(34, 34, 34, 0.05);
     --count-text: white;
+    --expand-text: rgba(128, 128, 128, 1);
+    --time-text: rgba(34, 34, 34, 0.5);
 }
 
 @font-face {
@@ -10,104 +14,98 @@
 }
 
 .navigation {
-    display: flex;
-    flex-direction: column;
+    position: absolute;
     width: 40px;
     padding: 20px 5px 20px 5px;
+    height: 100%;
+    border-right: 1px solid var(--border-color);
 }
 
-.navigation img {
+.navigation-image {
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
+    background-color: var(--bg-color);
     font-family: 'Golos UI';
-    height: 100vh;
-}
-
-.wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
 }
 
 .posts {
-    margin-top: 74px;
-    display: flex;
-    flex-direction: column;
+    position: absolute;
+    margin-left: 700px;
+}
+
+.post-image {
+    height: 474px;
     width: 474px;
 }
 
-.posts img {
-    height: 100%;
-    width: auto;
-}
-
 .post {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
+    width: 474px;
 }
 
 .userdata {
-    display: flex;
-    flex-direction: row;
     margin-bottom: 10px;
-    align-items: center;
-    position: relative;
-    width: 100%;
 }
 
-.userdata .logo {
-    margin-right: 20px;
-}
-
-.userdata .edit {
-    height: 70%;
+.edit {
     position: absolute;
     right: 0;
+    top: 5px;
+    cursor: pointer;
 }
 
-.text {
+.name {
+    position: absolute;
     font-size: 14px;
-    font-family: 'Golos UI';
     font-weight: bold;
+    margin-left: 40px;
+    margin-top: -30px;
+    width: 200px;
+    cursor: pointer;
 }
 
-.contentwrapper {
-    position: relative;
+.image-wrapper {
     max-height: 474px;
     max-width: 474px;
     padding: 10px 0px 10px 0px;
 }
 
-.contentwrapper .count {
+.image-count {
     position: absolute;
+    font-size: 15px;
+    font-weight: 400;
     right: 10px;
-    top: 40px;
-    margin: 0px;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: var(--count-bg);
+    top: 60px;
+    padding: 10px;
+    width: 26px;
+    border-radius: 20px;
+    background-color: var(--image-count-bg);
     color: var(--count-text);
+    backdrop-filter: blur(12px);
+    text-align: center;
 }
 
 .likes {
-    display: flex;
-    flex-direction: row;
     height: 30px;
-    align-items: center;
+    width: 70px;
+    background-color: var(--like-count-bg);
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-.likes img {
-    margin-right: 10px;
+.like-count {
+    position: absolute;
+    margin: -23px 0px 0px 32px;
 }
 
-p.content {
+.like-image {
+    margin: 6px 0px 0px 12px;
+}
+
+.post-text {
     max-height: 40px;
     overflow: hidden;
     font-size: 15px;
@@ -115,20 +113,20 @@ p.content {
 }
 
 .expand {
-    color: var(--help-text);
+    color: var(--expand-text);
+    cursor: pointer;
 }
 
 .time {
-    color: var(--help-text);
+    color: var(--time-text);
     font-size: 14px;
 }
 
 img.left,
 img.right {
-    height: auto;
-    width: auto;
+    top: 280px;
     position: absolute;
-    top: 50%;
+    cursor: pointer;
 }
 
 img.left {
