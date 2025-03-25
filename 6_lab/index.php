@@ -27,9 +27,9 @@ function intToWord(int $a): string
 
 function getZodiac(int $day, int $month): string
 {
-    if (($month == 3 && $day >= 21) || ($month == 4 && $day <= 19))
+    if (($month == 3 && $day >= 21) || ($month == 4 && $day <= 20))
         return "Овен";
-    if (($month == 4 && $day >= 20) || ($month == 5 && $day <= 20))
+    if (($month == 4 && $day >= 21) || ($month == 5 && $day <= 20))
         return "Телец";
     if (($month == 5 && $day >= 21) || ($month == 6 && $day <= 20))
         return "Близнецы";
@@ -79,7 +79,7 @@ function fac(int $a): int
     return 1;
 }
 
-function compute(string $a)
+function compute(string $a): int
 {
     $tokens = explode(' ', $a);
     $stack = [];
