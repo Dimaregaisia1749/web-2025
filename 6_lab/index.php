@@ -12,7 +12,7 @@
     <div>
         <p>Является ли год високосным</p>
         <form method="post">
-            <input type="text" name="input1" placeholder="год">
+            <input type="number" name="input1" placeholder="год">
             <button type="submit" name="submit1">Ввести</button>
         </form>
         <?php
@@ -45,8 +45,8 @@
     <div>
         <p>Счастливые билеты</p>
         <form method="post">
-            <input type="text" name="input4" placeholder="от">
-            <input type="text" name="input5" placeholder="до">
+            <input type="text" name="input4" placeholder="от(6 значное число)" pattern="\d{6}" maxlength="6" required>
+            <input type="text" name="input5" placeholder="до(6 значное число)" pattern="\d{6}" maxlength="6" required>
             <button type="submit" name="submit5">Ввести</button>
         </form>
         <?php
@@ -57,7 +57,7 @@
     <div>
         <p>Факториал</p>
         <form method="post">
-            <input type="text" name="input6" placeholder="число">
+            <input type="number" name="input6" placeholder="число">
             <button type="submit" name="submit6">Ввести</button>
         </form>
         <?php
