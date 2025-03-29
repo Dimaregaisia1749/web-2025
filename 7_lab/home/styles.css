@@ -1,0 +1,143 @@
+:root {
+    --bg-color: white;  
+    --image-count-bg: rgba(34, 34, 34, 0.5);
+    --like-count-bg: rgba(34, 34, 34, 0.05);
+    --border-color: rgba(34, 34, 34, 0.05);
+    --count-text: white;
+    --expand-text: rgba(128, 128, 128, 1);
+    --time-text: rgba(34, 34, 34, 0.5);
+}
+
+@font-face {
+    font-family: 'Golos UI';
+    src: url('src/Golos-UI_Regular.ttf');
+}
+
+.navigation {
+    position: absolute;
+    width: 40px;
+    padding: 20px 5px 20px 5px;
+    height: 100%;
+    border-right: 1px solid var(--border-color);
+}
+
+.navigation-image {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Golos UI';
+}
+
+.posts {
+    position: absolute;
+    margin-left: 200px;
+}
+
+.post-image {
+    height: 474px;
+    width: 474px;
+}
+
+.post {
+    margin-bottom: 40px;
+    width: 474px;
+}
+
+.userdata {
+    margin-bottom: 10px;
+}
+
+.edit {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    cursor: pointer;
+}
+
+.name {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 40px;
+    margin-top: -30px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.image-wrapper {
+    max-height: 474px;
+    max-width: 474px;
+    padding: 10px 0px 10px 0px;
+}
+
+.image-count {
+    position: absolute;
+    font-size: 15px;
+    font-weight: 400;
+    right: 10px;
+    top: 60px;
+    padding: 10px;
+    width: 26px;
+    border-radius: 20px;
+    background-color: var(--image-count-bg);
+    color: var(--count-text);
+    backdrop-filter: blur(12px);
+    text-align: center;
+}
+
+.likes {
+    height: 30px;
+    width: 70px;
+    background-color: var(--like-count-bg);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.like-count {
+    position: absolute;
+    margin: -23px 0px 0px 32px;
+}
+
+.like-image {
+    margin: 6px 0px 0px 12px;
+}
+
+.post-text {
+    max-height: 40px;
+    overflow: hidden;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.expand {
+    color: var(--expand-text);
+    cursor: pointer;
+}
+
+.time {
+    color: var(--time-text);
+    font-size: 14px;
+}
+
+img.left,
+img.right {
+    top: 280px;
+    position: absolute;
+    cursor: pointer;
+}
+
+img.left {
+    left: 10px;
+}
+
+img.right {
+    right: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
