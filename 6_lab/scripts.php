@@ -148,7 +148,7 @@ function two()
 function three()
 {
     if (isset($_POST['submit3'])) {
-        $d = $_POST['input3'];
+        $d = htmlspecialchars($_POST['input3']);
         $date = DateTime::createFromFormat('d.m.Y', $d);
         if (($date !== false) && ($date->format('d.m.Y') === $d)) {
             $ans = getZodiac($date->format('d'), $date->format('m'));
@@ -187,7 +187,7 @@ function six()
 function seven()
 {
     if (isset($_POST['submit7'])) {
-        $a = $_POST['input7'];
+        $a = htmlspecialchars($_POST['input7']);
         $ans = compute($a);
         if ($ans === INF) {
             echo "<p>Ошибочный ввод \n</p>";
