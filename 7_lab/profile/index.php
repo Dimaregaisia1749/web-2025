@@ -10,22 +10,22 @@
 
 <body>
     <div class="navigation">
-            <a href="http://localhost:8001/home/">
-                <img src="src/home.png" alt="Home" class="navigation-image">
-            </a>
-            <a href="http://localhost:8001/profile/?id=1">
-                <img src="src/profile_active.png" alt="Profile" class="navigation-image">
-            </a>
-            <img src="src/plus.png" alt="Plus" class="navigation-image">
+        <a href="http://localhost:8001/home/">
+            <img src="src/home.png" alt="Home" class="navigation-image">
+        </a>
+        <a href="http://localhost:8001/profile/?id=1">
+            <img src="src/profile_active.png" alt="Profile" class="navigation-image">
+        </a>
+        <img src="src/plus.png" alt="Plus" class="navigation-image">
     </div>
     <?php
     $jsonData = file_get_contents('../users.json');
     $jsonData = json_decode($jsonData, true);
     $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, [
-        'options' => [
-            'min_range' => 1,
-            'max_range' => 1000000
-        ]
+        'filter' => FILTER_CALLBACK,
+        'options' => function ($value) {
+            return (strlen($value) >= 1 && strlen($value) <= 100000) ? $value : false;
+        }
     ]);
     if (($id === false) || !isset($jsonData[$id])) {
         header("Location: http://localhost:8001/home/");

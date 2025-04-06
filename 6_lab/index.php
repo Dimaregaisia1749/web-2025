@@ -23,7 +23,7 @@
     <div>
         <p>Цифра -> слово</p>
         <form method="post">
-            <input type="text" name="input2" placeholder="цифра">
+            <input type="number" name="input2" placeholder="цифра">
             <button type="submit" name="submit2">Ввести</button>
         </form>
         <?php
@@ -45,8 +45,8 @@
     <div>
         <p>Счастливые билеты</p>
         <form method="post">
-            <input type="text" name="input4" placeholder="от(6 значное число)" pattern="\d{6}" maxlength="6" required>
-            <input type="text" name="input5" placeholder="до(6 значное число)" pattern="\d{6}" maxlength="6" required>
+            <input type="number" name="input4" placeholder="от(6 значное число)" pattern="\d{6}" maxlength="6" required>
+            <input type="number" name="input5" placeholder="до(6 значное число)" pattern="\d{6}" maxlength="6" required>
             <button type="submit" name="submit5">Ввести</button>
         </form>
         <?php
