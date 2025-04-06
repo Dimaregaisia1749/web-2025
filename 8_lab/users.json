@@ -1,0 +1,60 @@
+{
+    "1": {
+        "id": 1,
+        "user_name": "Ваня Денисов",
+        "logo_path": "src/logo1.png",
+        "description": "Привет! Я системный аналитик в ACME :) Тут моя жизнь только для самых классных!",
+        "posts": [
+            {
+                "path": "src/post_pictures/pic1.png"
+            },
+            {
+                "path": "src/post_pictures/pic2.png"
+            },
+            {
+                "path": "src/post_pictures/pic3.png"
+            },
+            {
+                "path": "src/post_pictures/pic4.png"
+            },
+            {
+                "path": "src/post_pictures/pic5.png"
+            },
+            {
+                "path": "src/post_pictures/pic6.png"
+            },
+            {
+                "path": "src/post_pictures/pic7.png"
+            },
+            {
+                "path": "src/post_pictures/pic8.png"
+            },
+            {
+                "path": "src/post_pictures/pic9.png"
+            }
+        ]
+    },
+    "2": {
+        "id": 2,
+        "user_name": "Лиза Дёмина",
+        "logo_path": "src/logo2.png",
+        "description": "бимбимбамбам",
+        "posts": [
+            {
+                "path": "src/post_pictures/pic1.png"
+            },
+            {
+                "path": "src/post_pictures/pic2.png"
+            },
+            {
+                "path": "src/post_pictures/pic3.png"
+            },
+            {
+                "path": "src/post_pictures/pic4.png"
+            },
+            {
+                "path": "src/post_pictures/pic5.png"
+            }
+        ]
+    }
+}
