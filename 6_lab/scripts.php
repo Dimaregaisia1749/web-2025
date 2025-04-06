@@ -164,7 +164,9 @@ function four()
     if (isset($_POST['submit5'])) {
         $from = (int) $_POST['input4'];
         $to = (int) $_POST['input5'];
-        if ($from > $to){
+        if ((intdiv($from, 100000) == 0) || ((intdiv($from, 100000) == 0))) {
+            echo "<p>Номера не шестизначные</p>";   
+        } elseif ($from > $to) {
             echo "<p>Первый номер больше последнего</p>";
         } else {
             $ans = luckyTickets($from, $to);
