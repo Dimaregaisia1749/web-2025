@@ -37,7 +37,6 @@ function validatePostsJson($jsonData)
             ]
         ];
 
-
         $imageFilters = [
             'path' => [
                 'filter' => FILTER_CALLBACK,
@@ -50,20 +49,20 @@ function validatePostsJson($jsonData)
         $validatedImages = [];
         foreach ($item['images'] as $imgIndex => $image) {
             $validatedImage = filter_var_array($image, $imageFilters);
-            if ($validatedImage['path'] === false) {
+            if (isset($validatedImage['path']) === false) {
                 $errors[] = "Ошибка в элементе $index: поле 'images[$imgIndex].path' не прошло валидацию.";
             }
             $validatedImages[] = $validatedImage;
         }
 
         foreach ($validatedItem as $key => $value) {
-            if ($value === false) {
+            if (isset($value) === false) {
                 $errors[] = "Ошибка в элементе $index: поле '$key' не прошло валидацию.";
             }
         }
 
         foreach ($validatedAuthor as $key => $value) {
-            if ($value === false) {
+            if (isset($value) === false) {
                 $errors[] = "Ошибка в элементе $index: поле 'author.$key' не прошло валидацию.";
             }
         }
@@ -109,14 +108,14 @@ function validateUserJson($jsonData)
         $validatedPosts = [];
         foreach ($user['posts'] as $postIndex => $post) {
             $validatedPost = filter_var_array($post, $postFilter);
-            if ($validatedPost['path'] === false) {
+            if (isset($validatedPost['path']) === false) {
                 $errors[] = "Ошибка в элементе $userKey: поле 'images[$postIndex].path' не прошло валидацию.";
             }
             $validatedPosts[] = $validatedPost;
         }
         
         foreach ($validatedUser as $key => $value) {
-            if ($value === false) {
+            if (isset($value) === false) {
                 $errors[] = "Ошибка у пользователя $userKey: поле '$key' не прошло валидацию.";
             }
         }
