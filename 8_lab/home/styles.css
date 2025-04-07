@@ -77,8 +77,8 @@ body {
     position: absolute;
     font-size: 15px;
     font-weight: 400;
-    right: 10px;
-    top: 60px;
+    margin-top: -99%;
+    margin-left: 89%;
     padding: 10px;
     width: 26px;
     border-radius: 20px;
@@ -122,18 +122,18 @@ body {
     font-size: 14px;
 }
 
-img.left,
-img.right {
-    top: 280px;
+.left,
+.right {
+    margin-top: 50%;
     position: absolute;
     cursor: pointer;
 }
 
-img.left {
+.left {
     left: 10px;
 }
 
-img.right {
+.right {
     right: 10px;
 }
 

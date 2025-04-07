@@ -19,27 +19,16 @@
         <img src="src/plus.png" alt="Plus" class="navigation-image">
     </div>
     <?php
-    $jsonData = file_get_contents('../users.json');
-    $jsonData = json_decode($jsonData, true);
     $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, [
         'filter' => FILTER_CALLBACK,
         'options' => function ($value) {
             return (strlen($value) >= 1 && strlen($value) <= 100000) ? $value : false;
         }
     ]);
-    if (($id === false) || !isset($jsonData[$id])) {
+    if ($id === false) {
         header("Location: http://localhost:8001/home/");
     }
-    $user = $jsonData[$id];
-    require_once '../validation.php';
-    $validationResults = validateUserJson($jsonData);
-    if (count($validationResults) > 0) {
-        foreach ($validationResults as $post) {
-            echo "<p>$post \n</p>";
-        }
-    } else {
-        include 'profile_template.php';
-    }
+    include 'profile_template.php';
     ?>
 </body>
 

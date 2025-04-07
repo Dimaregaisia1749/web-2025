@@ -20,18 +20,11 @@
     </div>
     <div class="posts">
         <?php
-        $jsonData = file_get_contents('../posts.json');
-        $posts = json_decode($jsonData, true);
-        require_once '../validation.php';
-        $validationResults = validatePostsJson($posts);
-        if (count($validationResults) > 0) {
-            foreach ($validationResults as $post) {
-                echo "<p>$post \n</p>";
-            }
-        } else {
-            foreach ($posts as $post) {
-                include 'post_template.php';
-            }
+        require_once '../data/sql/db_scripts.php';
+        $connection = connectDatabase();
+        $posts = findAllPosts($connection);
+        foreach ($posts as $post) {
+            include 'post_template.php';
         }
         ?>
     </div>
