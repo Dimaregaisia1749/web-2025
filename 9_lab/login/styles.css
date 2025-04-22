@@ -1,0 +1,84 @@
+:root {
+    --bg-color: white;
+    --input-color: #F2F3F5;
+    --btn-color: #222222;
+    --text-color: #222222;
+    --tip-color: #808080;
+    --btn-text-color: white;
+}
+
+
+@font-face {
+    font-family: 'Golos UI';
+    src: url('src/Golos-UI_Regular.ttf');
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Golos UI';
+}
+
+.image {
+    position: absolute;
+    width: 462px;
+    height: 501px;
+    margin-top: 189px;
+    margin-left: 450px;
+    
+}
+
+.login {
+    position: absolute;
+    font-weight: 700;
+    font-size: 140px;
+    line-height: 180px;
+    letter-spacing: -1.5px;
+    top: -100px;
+    right: 200px;
+    margin: 0;
+}
+
+.forms {
+    position: absolute;
+    width: 343px;
+    height: 251px;
+    margin-top: 315px;
+    margin-left: 1000px;
+}
+
+.tip {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.08px;
+    color: var(--tip-color);
+    margin-top: 0;
+}
+
+.info {
+    color: var(--text-color);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    margin: 0;
+}
+
+input {
+    margin-top: 5px;
+    width: 343px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: var(--input-color);
+    border: 0;
+}
+
+input[type="button"] {
+    width: 343px;
+    height: 48px;
+    margin-top: 32px;
+    border-radius: 10px;
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    cursor: pointer;
+}

@@ -1,0 +1,95 @@
+:root {
+    --bg-color: white;
+    --text-color: rgba(34, 34, 34, 1);
+    --post-bg-color: rgba(242, 243, 245, 1);
+    --border-color: rgba(34, 34, 34, 0.05)
+}
+
+@font-face {
+    font-family: 'Golos UI';
+    src: url('src/Golos-UI_Regular.ttf');
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Golos UI';
+}
+
+.navigation {
+    position: absolute;
+    width: 40px;
+    padding: 20px 5px 20px 5px;
+    height: 100%;
+    border-right: 1px solid var(--border-color)
+}
+
+.navigation-image {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.profile {
+    margin-left: 300px;
+    width: 1000px;
+}
+
+.logo {
+    object-fit: cover;
+    width: 123px;
+    height: 123px;
+    border-radius: 16px;
+    margin-left: 450px;
+}
+
+.name {
+    font-weight: 500;
+    font-size: 32px;
+    margin: 0 0 10px 0;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.description {
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--text-color);
+    width: 360px;
+    margin: 0 0 10px 0;
+    text-align: center;
+    margin-left: 330px;
+}
+
+.post-counter {
+    width: 100px;
+    height: 30px;
+    border-radius: 6px;
+    background-color: var(--post-bg-color);
+    margin: 0 0 40px 460px;
+}
+
+.post-image {
+    margin: 6px 0 0 5px;
+    position: absolute;
+}
+
+.post-text {
+    font-weight: 400;
+    position: absolute;
+    margin: 5px 0 0 30px;
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+.posts {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.content {
+    margin: 0;
+}
+
+.image {
+    width: 320px;
+    height: 320px;
+}
