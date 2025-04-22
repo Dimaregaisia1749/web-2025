@@ -124,7 +124,7 @@ body {
 
 .left,
 .right {
-    margin-top: 50%;
+    margin-top: -50%;
     position: absolute;
     cursor: pointer;
 }

@@ -10,7 +10,7 @@ $input = file_get_contents('php://input');
 $data = json_decode($input, true);
 
 if (!$data) {
-    echo  json_encode(['error' => 'Invalid JSON']);
+    echo json_encode(['error' => 'Invalid JSON']);
     exit;
 }
 if (!isset($data['content']) || strlen($data['content']) > 10000) {
