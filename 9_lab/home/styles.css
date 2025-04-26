@@ -1,5 +1,5 @@
 :root {
-    --bg-color: white;  
+    --bg-color: white;
     --image-count-bg: rgba(34, 34, 34, 0.5);
     --like-count-bg: rgba(34, 34, 34, 0.05);
     --border-color: rgba(34, 34, 34, 0.05);
@@ -13,131 +13,205 @@
     src: url('src/Golos-UI_Regular.ttf');
 }
 
-.navigation {
-    position: absolute;
-    width: 40px;
-    padding: 20px 5px 20px 5px;
-    height: 100%;
-    border-right: 1px solid var(--border-color);
-}
-
-.navigation-image {
-    margin-bottom: 5px;
-    cursor: pointer;
-}
-
 body {
+    margin: 0;
+    padding: 0;
     background-color: var(--bg-color);
-    font-family: 'Golos UI';
+    font-family: 'Golos UI', sans-serif;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav__list {
+    display: flex;
+    gap: 16px;
+}
+
+.nav__item {
+    flex: none;
+}
+
+.nav__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.nav__icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 }
 
 .posts {
-    position: absolute;
-    margin-left: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: 32px;
+    justify-content: center;
 }
 
-.post-image {
-    height: 474px;
-    width: 474px;
+.posts__item {
+    flex: 1 1 calc(33.333% - 32px);
+    box-sizing: border-box;
+    max-width: 474px;
 }
 
 .post {
-    margin-bottom: 40px;
-    width: 474px;
-}
-
-.userdata {
-    margin-bottom: 10px;
-}
-
-.edit {
-    position: absolute;
-    right: 0;
-    top: 5px;
-    cursor: pointer;
-}
-
-.name {
-    position: absolute;
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: 40px;
-    margin-top: -30px;
-    width: 200px;
-    cursor: pointer;
-}
-
-.image-wrapper {
-    max-height: 474px;
-    max-width: 474px;
-    padding: 10px 0px 10px 0px;
-}
-
-.image-count {
-    position: absolute;
-    font-size: 15px;
-    font-weight: 400;
-    margin-top: -99%;
-    margin-left: 89%;
-    padding: 10px;
-    width: 26px;
-    border-radius: 20px;
-    background-color: var(--image-count-bg);
-    color: var(--count-text);
-    backdrop-filter: blur(12px);
-    text-align: center;
-}
-
-.likes {
-    height: 30px;
-    width: 70px;
-    background-color: var(--like-count-bg);
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    cursor: pointer;
-}
-
-.like-count {
-    position: absolute;
-    margin: -23px 0px 0px 32px;
-}
-
-.like-image {
-    margin: 6px 0px 0px 12px;
-}
-
-.post-text {
-    max-height: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     overflow: hidden;
-    font-size: 15px;
-    margin-bottom: 0;
 }
 
-.expand {
-    color: var(--expand-text);
-    cursor: pointer;
+.post__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
 }
 
-.time {
-    color: var(--time-text);
-    font-size: 14px;
-}
-
-.left,
-.right {
-    margin-top: -50%;
-    position: absolute;
-    cursor: pointer;
-}
-
-.left {
-    left: 10px;
-}
-
-.right {
-    right: 10px;
-}
-
-a {
+.post__user {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: inherit;
+}
+
+.post__user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post__user-name {
+    margin-left: 12px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.post__edit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.post__edit-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.post__carousel {
+    position: relative;
+    width: 100%;
+    max-height: 474px;
+    overflow: hidden;
+}
+
+.post__image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.post__counter {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: var(--image-count-bg);
+    color: var(--count-text);
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+}
+
+.post__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.post__arrow--left {
+    left: 16px;
+}
+
+.post__arrow--right {
+    right: 16px;
+}
+
+.post__arrow-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.post__actions {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.post__like {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--like-count-bg);
+    border-radius: 8px;
+    padding: 8px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.post__like-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.post__like-count {
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.post__content {
+    padding: 0 16px;
+}
+
+.post__text {
+    margin: 0;
+    font-size: 15px;
+    max-height: 56px;
+    overflow: hidden;
+}
+
+.post__more {
+    display: inline-block;
+    color: var(--expand-text);
+    cursor: pointer;
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+.post__time {
+    padding: 0 16px 16px;
+    font-size: 14px;
+    color: var(--time-text);
 }
