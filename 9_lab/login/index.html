@@ -9,19 +9,21 @@
 </head>
 
 <body>
-    <div class="image">
-        <h1 class="login">Войти</h1>
-        <img src="src/LoginImage.png" alt="Login image">
-    </div>
-    <div class="forms">
-        <form>
-            <p class="info">Электропочта</p>
-            <input type="email" name="email">
-            <p class="tip">Введите электропочту в формате *****@***.**</p>
-            <p class="info">Пароль</p>
-            <input type="password" name="Password">
-            <input type="button" value="Продолжить">
-        </form>
+    <div class="wrapper">
+        <div class="login-preview">
+            <img src="src/LoginImage.png" class="login-preview__image" alt="Login image">
+            <h1 class="login-preview__title">Войти</h1>
+        </div>
+        <div class="login-form">
+            <div class="data">
+                <p class="email">Электропочта</p>
+                <input type="login-form__email" class="login-form__email" name="email">
+                <p class="login-form__tip">Введите электропочту в формате *****@***.**</p>
+                <p class="login-form__title">Пароль</p>
+                <input type="password" class="login-form__password" name="Password">
+            </div>
+            <input type="button" class="login-form__continue" value="Продолжить">
+        </div>
     </div>
 </body>
 

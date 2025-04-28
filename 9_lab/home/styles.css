@@ -17,70 +17,53 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
-    font-family: 'Golos UI', sans-serif;
+    font-family: 'Golos UI';
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
 }
 
 .nav {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     padding: 16px;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.nav__list {
-    display: flex;
-    gap: 16px;
-}
-
-.nav__item {
-    flex: none;
-}
-
-.nav__link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 8px;
+    border-right: 1px solid var(--border-color);
+    width: 36px;
 }
 
 .nav__icon {
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
     cursor: pointer;
 }
 
 .posts {
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 32px;
     padding: 32px;
     justify-content: center;
-}
-
-.posts__item {
-    flex: 1 1 calc(33.333% - 32px);
-    box-sizing: border-box;
-    max-width: 474px;
+    flex-direction: column;
 }
 
 .post {
+    max-width: 474px;
     background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    overflow: hidden;
+    gap: 12px;
 }
 
 .post__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px;
 }
 
 .post__user {
@@ -90,17 +73,15 @@ body {
     color: inherit;
 }
 
-.post__user-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+.post__logo {
+    width: 32px;
+    height: 32px;
 }
 
-.post__user-name {
+.post__username {
     margin-left: 12px;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .post__edit {
@@ -112,21 +93,18 @@ body {
 }
 
 .post__edit-icon {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 .post__carousel {
     position: relative;
     width: 100%;
     max-height: 474px;
-    overflow: hidden;
 }
 
 .post__image {
     width: 100%;
-    height: auto;
-    display: block;
 }
 
 .post__counter {
@@ -147,7 +125,6 @@ body {
     transform: translateY(-50%);
     background: none;
     border: none;
-    padding: 8px;
     cursor: pointer;
 }
 
@@ -160,14 +137,13 @@ body {
 }
 
 .post__arrow-icon {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
 }
 
 .post__actions {
     display: flex;
     align-items: center;
-    padding: 0 16px;
 }
 
 .post__like {
@@ -176,8 +152,6 @@ body {
     background-color: var(--like-count-bg);
     border-radius: 8px;
     padding: 8px;
-    text-decoration: none;
-    color: inherit;
     cursor: pointer;
 }
 
@@ -188,30 +162,22 @@ body {
 
 .post__like-count {
     margin-left: 8px;
-    font-size: 14px;
-}
-
-.post__content {
-    padding: 0 16px;
 }
 
 .post__text {
-    margin: 0;
-    font-size: 15px;
-    max-height: 56px;
+    max-height: 40px;
     overflow: hidden;
+    font-size: 15px;
+    margin: 0;
 }
 
 .post__more {
-    display: inline-block;
     color: var(--expand-text);
     cursor: pointer;
-    margin-top: 4px;
-    font-size: 14px;
 }
 
 .post__time {
-    padding: 0 16px 16px;
     font-size: 14px;
     color: var(--time-text);
+    margin: 0;
 }

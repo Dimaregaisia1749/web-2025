@@ -2,7 +2,7 @@
     --bg-color: white;
     --text-color: rgba(34, 34, 34, 1);
     --post-bg-color: rgba(242, 243, 245, 1);
-    --border-color: rgba(34, 34, 34, 0.05)
+    --border-color: rgba(34, 34, 34, 0.05);
 }
 
 @font-face {
@@ -11,85 +11,102 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     background-color: var(--bg-color);
     font-family: 'Golos UI';
 }
 
-.navigation {
-    position: absolute;
-    width: 40px;
-    padding: 20px 5px 20px 5px;
-    height: 100%;
-    border-right: 1px solid var(--border-color)
+.wrapper {
+    display: flex;
+    flex-direction: row;
 }
 
-.navigation-image {
-    margin-bottom: 5px;
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px;
+    border-right: 1px solid var(--border-color);
+    width: 36px;
+}
+
+.nav__icon {
+    width: 36px;
+    height: 36px;
     cursor: pointer;
 }
 
-.profile {
-    margin-left: 300px;
-    width: 1000px;
+.user-profile {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.logo {
+.user-profile__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-profile__logo {
     object-fit: cover;
     width: 123px;
     height: 123px;
     border-radius: 16px;
-    margin-left: 450px;
 }
 
-.name {
+.user-profile__username {
     font-weight: 500;
     font-size: 32px;
-    margin: 0 0 10px 0;
-    text-align: center;
     color: var(--text-color);
+    text-align: center;
+    margin: 0;
 }
 
-.description {
+.user-profile__description {
     font-weight: 400;
     font-size: 15px;
     color: var(--text-color);
     width: 360px;
-    margin: 0 0 10px 0;
     text-align: center;
-    margin-left: 330px;
+    margin: 0;
 }
 
-.post-counter {
-    width: 100px;
-    height: 30px;
-    border-radius: 6px;
+.user-profile__stat{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 12px;
     background-color: var(--post-bg-color);
-    margin: 0 0 40px 460px;
+    margin: 0;
+    height: 30px;
+    padding: 5px;
 }
 
-.post-image {
-    margin: 6px 0 0 5px;
-    position: absolute;
+.user-profile__stat-icon {
+    width: 20px;
+    height: 20px;   
 }
 
-.post-text {
-    font-weight: 400;
-    position: absolute;
-    margin: 5px 0 0 30px;
-    font-size: 15px;
-    color: var(--text-color);
+.user-profile__stat-count {
+    height: 20px;
+    margin: 0;
 }
 
 .posts {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    max-width: 970px;
 }
 
-.content {
-    margin: 0;
-}
-
-.image {
+.posts__post {
     width: 320px;
     height: 320px;
 }

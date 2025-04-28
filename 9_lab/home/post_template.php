@@ -6,10 +6,10 @@ $post_images = findPostImagesInDatabase($connection, $post['id']);
 <div class="post">
     <div class="post__header">
         <a href="http://localhost:8001/profile/?id=<?= $user['id'] ?>" class="post__user">
-            <img src="<?= $user['logo_path'] ?>" alt="<?= htmlspecialchars($user['username'], ENT_QUOTES) ?>" class="post__user-avatar">
-            <span class="post__user-name"><?= htmlspecialchars($user['username'], ENT_QUOTES) ?></span>
+            <img src="<?= $user['logo_path'] ?>" alt="<?= htmlspecialchars($user['username']) ?>" class="post__logo">
+            <span class="post__username"><?= htmlspecialchars($user['username']) ?></span>
         </a>
-        <a href="http://localhost:8001/post/edit/?id=<?= $post['id'] ?>" class="post__edit">
+        <a href="#" class="post__edit">
             <img src="src/edit.png" alt="Edit post" class="post__edit-icon">
         </a>
     </div>
@@ -28,15 +28,15 @@ $post_images = findPostImagesInDatabase($connection, $post['id']);
     </div>
 
     <div class="post__actions">
-        <a href="#" class="post__like">
+        <div class="post__like">
             <img src="src/like.png" alt="Like" class="post__like-icon">
             <span class="post__like-count"><?= $post['likes'] ?></span>
-        </a>
+        </div>
     </div>
 
     <div class="post__content">
-        <p class="post__text"><?= htmlspecialchars($post['content'], ENT_QUOTES) ?></p>
-        <span class="post__more">...еще</span>
+        <p class="post__text"><?= htmlspecialchars($post['content']) ?></p>
+        <span class="post__more">еще</span>
     </div>
 
     <?php include_once "format_time.php"; ?>
