@@ -97,7 +97,7 @@ function generatePassword(length) {
     const lowercase = 'abcdefghijklmnopqrstuvwxyz';
     const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const numbers = '0123456789';
-    const symbols = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+    const symbols = '!@#$%^&*';
 
     const all = [lowercase, uppercase, numbers, symbols];
     let password = all.map(chars => chars[Math.floor(Math.random() * chars.length)]).join('');
