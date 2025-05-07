@@ -1,11 +1,12 @@
 function isPrimeNumber(input) {
     function isPrime(num) {
-        if (!Number.isInteger(num) || num <= 1) return false;
+        if (typeof num !== 'number' || num <= 1) return false;
         for (let i = 2; i <= Math.sqrt(num); i += 1) {
             if (num % i === 0) return false;
         }
         return true;
     }
+    console.log(`Ввод: ${input}`);
 
     if (typeof input !== 'number' && !Array.isArray(input)) {
         console.log('Параметр должен быть числом или массивом чисел');
@@ -28,15 +29,12 @@ function isPrimeNumber(input) {
             }
             isPrime(num) ? primes.push(num) : nonPrimes.push(num);
         }
-        const ans = [];
-        ans.push(`Ввод: ${input}`);
         if (primes.length > 0) {
-            ans.push(`Простые числа: ${primes.join(', ')}`);
+            console.log(`Простые числа: ${primes.join(', ')}`);
         }
         if (nonPrimes.length > 0) {
-            ans.push(`Не простые числа: ${nonPrimes.join(', ')}`);
+            console.log(`Не простые числа: ${nonPrimes.join(', ')}`);
         }
-        console.log(ans.join('\n'));
     }
 }
 
@@ -118,5 +116,3 @@ function mapFilter(arr) {
     console.log(ans);
     return ans;
 }
-
-console.log('\n');
