@@ -176,7 +176,10 @@ body {
 }
 
 .post__text {
-    max-height: 40px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
     font-size: 15px;
     margin: 0;
@@ -257,4 +260,8 @@ body {
 
 .modal__arrow_disabled {
     display: none;
+}
+
+.post__more_disabled {
+    display: none; 
 }

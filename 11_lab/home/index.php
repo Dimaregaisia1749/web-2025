@@ -2,6 +2,7 @@
 <html lang="ru">
 <script src="slider.js" defer></script>
 <script src="modal_window.js" defer></script>
+<script src="expand.js" defer></script>
 
 <head>
     <meta charset="UTF-8">
