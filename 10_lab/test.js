@@ -16,7 +16,7 @@ uniqueElements(['1']);
 console.log('\n');
 
 mergeObjects({ a: 1, b: 2 }, { b: 3, c: 4 });
-mergeObjects({ a: 1, b: 2 }, { с: 3, d: 4 });
+mergeObjects({ a: 1, b: 3 }, { с: 2, d: 4 });
 console.log('\n');
 
 const users = [
@@ -29,10 +29,16 @@ console.log('\n');
 
 const nums = { a: 1, b: 2, c: 3 };
 mapObject(nums, x => x * 2)
+const nums2 = { a: 1, b: 2, c: 3 };
+mapObject(nums2, x => x > 2)
 console.log('\n');
 
 console.log('Пароль:');
 console.log(generatePassword(10))
+console.log(generatePassword(4))
+console.log(generatePassword(1500))
+
+
 console.log('\n');
 
 const numbers = [2, 5, 8, 10, 3];

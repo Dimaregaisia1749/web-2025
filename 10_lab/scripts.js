@@ -4,30 +4,40 @@ function isPrimeNumber(input) {
         for (let i = 2; i <= Math.sqrt(num); i += 1) {
             if (num % i === 0) return false;
         }
+
         return true;
     }
+
     console.log(`Ввод: ${input}`);
 
     if (typeof input !== 'number' && !Array.isArray(input)) {
         console.log('Параметр должен быть числом или массивом чисел');
+
         return;
     }
 
     if (typeof input === 'number') {
         if (!Number.isInteger(input)) {
             console.log('Число должно быть целым');
+
             return;
         }
-        console.log(`${input} ${isPrime(input) ? 'простое число' : 'не простое число'}`);
+        console.log(`${input} ${isPrime(input) 
+            ? 'простое число' 
+            : 'не простое число'
+        }`);
     } else {
         const primes = [];
         const nonPrimes = [];
         for (const num of input) {
             if (typeof num !== 'number' || !Number.isInteger(num)) {
                 console.log('Массив должен содержать только целые числа');
+
                 return;
             }
-            isPrime(num) ? primes.push(num) : nonPrimes.push(num);
+            isPrime(num) 
+              ? primes.push(num) 
+              : nonPrimes.push(num);
         }
         if (primes.length > 0) {
             console.log(`Простые числа: ${primes.join(', ')}`);
@@ -39,14 +49,15 @@ function isPrimeNumber(input) {
 }
 
 function countVowels(str) {
-    const vowels = new Set(['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я']);
+    const vowels = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'];
     const ans = [];
     for (let char of str) {
         char = char.toLowerCase();
-        if (vowels.has(char)) {
+        if (vowels.includes(char)) {
             ans.push(char);
         }
     }
+
     console.log(`Ввод: ${str}`);
     console.log(`Количество гласных: ${ans.length}. (${ans.join(', ')})`);
 }
@@ -55,8 +66,10 @@ function uniqueElements(arr) {
     const ans = arr.reduce((acc, element) => {
         const key = String(element);
         acc[key] = (acc[key] || 0) + 1;
+
         return acc;
     }, {});
+
     console.log(`Ввод: ${arr}`);
     console.log(ans);
 }
@@ -82,9 +95,9 @@ function mapObject(obj, callback) {
     console.log(`Ввод:`);
     console.log(obj, callback);
     console.log(`Результат:`);
-    let ans = {};
-    for (let key in obj) {
-        let newValue = callback(obj[key]);
+    const ans = {};
+    for (const key in obj) {
+        const newValue = callback(obj[key]);
         ans[key] = newValue;
     }
     console.log(ans);
@@ -98,7 +111,9 @@ function generatePassword(length) {
     const symbols = '!@#$%^&*';
 
     const all = [lowercase, uppercase, numbers, symbols];
-    let password = all.map(chars => chars[Math.floor(Math.random() * chars.length)]).join('');
+    let password = all
+                    .map(chars => chars[Math.floor(Math.random() * chars.length)])
+                    .join('');
 
     for (let i = password.length; i < length; i++) {
         const charset = all[Math.floor(Math.random() * all.length)];
@@ -111,7 +126,9 @@ function generatePassword(length) {
 function mapFilter(arr) {
     console.log(`Ввод:`);
     console.log(arr);
-    const ans = arr.map(x => x * 3).filter(x => x > 10);
+    const ans = arr
+                  .map(x => x * 3)
+                  .filter(x => x > 10);
     console.log(`Результат:`);
     console.log(ans);
     return ans;
