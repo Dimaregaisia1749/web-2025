@@ -128,11 +128,11 @@ body {
     cursor: pointer;
 }
 
-.post__arrow--left {
+.post__arrow-left {
     left: 16px;
 }
 
-.post__arrow--right {
+.post__arrow-right {
     right: 16px;
 }
 

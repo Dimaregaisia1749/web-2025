@@ -15,13 +15,20 @@ $post_images = findPostImagesInDatabase($connection, $post['id']);
     </div>
 
     <div class="post__carousel">
-        <img src="<?= $post_images[0]['image_path'] ?>" alt="Post image" class="post__image">
+        <?php foreach ($post_images as $index => $image): ?>
+            <img 
+                src="<?= $image['image_path'] ?>" 
+                alt="Post image" 
+                class="post__image"
+            >
+        <?php endforeach; ?>
+
         <?php if (count($post_images) > 1): ?>
             <span class="post__counter">1/<?= count($post_images) ?></span>
-            <button type="button" class="post__arrow post__arrow--left">
+            <button type="button" class="post__arrow post__arrow-left">
                 <img src="src/left.png" alt="Previous" class="post__arrow-icon">
             </button>
-            <button type="button" class="post__arrow post__arrow--right">
+            <button type="button" class="post__arrow post__arrow-right">
                 <img src="src/right.png" alt="Next" class="post__arrow-icon">
             </button>
         <?php endif; ?>

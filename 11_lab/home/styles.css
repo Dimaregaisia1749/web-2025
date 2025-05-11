@@ -42,8 +42,9 @@ body {
 }
 
 .posts {
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-wrap: nowrap;
     gap: 32px;
@@ -97,14 +98,24 @@ body {
     height: 24px;
 }
 
-.post__carousel {
+.post__carousel{
     position: relative;
     width: 100%;
     max-height: 474px;
 }
 
-.post__image {
+.post__image, .modal__image {
     width: 100%;
+    height: 474px;
+    display: none;
+}
+
+.post__image_disabled {
+    display: none;
+}
+
+.post__image_active {
+    display: block;
 }
 
 .post__counter {
@@ -119,7 +130,7 @@ body {
     backdrop-filter: blur(12px);
 }
 
-.post__arrow {
+.post__arrow, .modal__arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -128,15 +139,15 @@ body {
     cursor: pointer;
 }
 
-.post__arrow--left {
+.post__arrow-left, .modal__arrow-left {
     left: 16px;
 }
 
-.post__arrow--right {
+.post__arrow-right, .modal__arrow-right {
     right: 16px;
 }
 
-.post__arrow-icon {
+.post__arrow-icon, .modal__arrow-icon {
     width: 20px;
     height: 20px;
 }
@@ -180,4 +191,70 @@ body {
     font-size: 14px;
     color: var(--time-text);
     margin: 0;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(145, 145, 145, 1);
+}
+
+.modal_disabled {
+    display: none;
+}
+
+.modal_active {
+    display: flex;
+}
+
+.modal__image {
+    width: 636px;
+    height: 636px;
+}
+
+.modal__image_disabled {
+    display: none;
+}
+
+.modal__image_active {
+    display: block;
+}
+
+.modal__carousel {
+    position: relative;
+    max-width: 100%;
+    max-height: 636px;
+}
+
+.modal__counter {
+    color: rgba(255, 255, 255, 1);
+}
+
+.modal__close {
+    background: none;
+    border: none;
+    align-self: flex-end;
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.modal-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 636px;
+    gap: 16px;
+}
+
+.modal__arrow_disabled {
+    display: none;
 }
