@@ -1,7 +1,7 @@
 const modal = document.getElementById('modal');
 const modalImagesContainer = modal.querySelector('.modal__images');
 const modalCounter = modal.querySelector('.modal__counter');
-const arrows = modal.querySelector('.modal__arrow');
+const arrows = modal.querySelectorAll('.modal__arrow');
 
 document.querySelectorAll('.post__image').forEach(img => {
     img.addEventListener('click', () => {      
