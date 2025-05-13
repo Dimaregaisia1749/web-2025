@@ -25,7 +25,7 @@
                 </a>
             </div>
             <div class="nav__item">
-                <a href="#" class="nav__link">
+                <a href="http://localhost:8001/addpost/" class="nav__link">
                     <img src="src/plus.png" alt="Add" class="nav__icon">
                 </a>
             </div>

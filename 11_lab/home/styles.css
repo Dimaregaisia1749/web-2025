@@ -46,7 +46,6 @@ body {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    flex-wrap: nowrap;
     gap: 32px;
     padding: 32px;
     justify-content: center;
@@ -130,6 +129,10 @@ body {
     backdrop-filter: blur(12px);
 }
 
+.post__counter-disabled {
+    display: none;
+}
+
 .post__arrow, .modal__arrow {
     position: absolute;
     top: 50%;
@@ -143,6 +146,10 @@ body {
     left: 16px;
 }
 
+.post__arrow-disabled, .modal__arrow-disabled {
+    display: none;
+}
+
 .post__arrow-right, .modal__arrow-right {
     right: 16px;
 }
@@ -150,6 +157,12 @@ body {
 .post__arrow-icon, .modal__arrow-icon {
     width: 20px;
     height: 20px;
+    opacity: 0.6;
+    backdrop-filter: blur(13px);
+}
+
+.post__arrow-icon_dark, .modal__arrow-icon_dark {
+    opacity: 0.1;
 }
 
 .post__actions {
@@ -256,10 +269,6 @@ body {
     flex-direction: column;
     max-width: 636px;
     gap: 16px;
-}
-
-.modal__arrow_disabled {
-    display: none;
 }
 
 .post__more_disabled {

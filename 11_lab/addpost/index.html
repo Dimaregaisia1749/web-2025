@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<script src="scripts.js" defer></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Создать пост</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            <div class="nav__item">
+                <a href="http://localhost:8001/home/" class="nav__link">
+                    <img src="src/home.png" alt="Home" class="nav__icon">
+                </a>
+            </div>
+            <div class="nav__item">
+                <a href="http://localhost:8001/profile/?id=1" class="nav__link">
+                    <img src="src/profile.png" alt="Profile" class="nav__icon">
+                </a>
+            </div>
+            <div class="nav__item">
+                <a href="http://localhost:8001/addpost/" class="nav__link">
+                    <img src="src/plus.png" alt="Add" class="nav__icon">
+                </a>
+            </div>
+        </div>
+
+        <div class="add-post">
+            <div class="add-post__carousel">
+                <p class="add-post__counter add-post__counter_disabled"></p>
+                <div class="add-post__images"></div>
+                <button type="button" class="add-post__arrow add-post__arrow-left add-post__arrow_disabled">
+                    <img src="src/left.png" alt="Previous" class="add-post__arrow-icon">
+                </button>
+                <button type="button" class="add-post__arrow add-post__arrow-right add-post__arrow_disabled">
+                    <img src="src/right.png" alt="Next" class="add-post__arrow-icon">
+                </button>
+                <img src="src/image_placeholder.png" alt="Placeholder" class="add-post__image-placeholder">
+                <button class="btn-upload btn-upload_first">Добавить фото</button>
+            </div>
+            <button class="btn-upload btn-upload_second">
+                <img src="src/add_post.png" alt="Add post" class="add-post__icon btn-upload">
+                <p class="btn-upload__title">Добавить фото</p>
+            </button>
+            <input type="file" class="file-input" accept="image/*" multiple style="display: none;">
+            <textarea class="add-post__text" placeholder="Добавьте подпись..."></textarea>
+            <button class="btn-share btn-share_disabled">Поделиться</button>
+        </div>
+    </div>
+    
+</body>
+
+</html>
