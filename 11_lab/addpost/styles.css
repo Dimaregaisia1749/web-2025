@@ -135,8 +135,7 @@ body {
     cursor: pointer;
     border: none;
     position: absolute;
-    top: 85%;
-    transform: translateY(-50%);
+    top: 90%;
     width: 140px;
     height: 48px;
     border-radius: 10px;
@@ -194,7 +193,7 @@ body {
     letter-spacing: -0.15px;
     border: none;
     min-width: 474px;
-    min-height: 150px;
+    min-height: 50px;
     resize: none;
 }
 
