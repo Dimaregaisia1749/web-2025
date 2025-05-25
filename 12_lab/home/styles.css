@@ -1,0 +1,276 @@
+:root {
+    --bg-color: white;
+    --image-count-bg: rgba(34, 34, 34, 0.5);
+    --like-count-bg: rgba(34, 34, 34, 0.05);
+    --border-color: rgba(34, 34, 34, 0.05);
+    --count-text: white;
+    --expand-text: rgba(128, 128, 128, 1);
+    --time-text: rgba(34, 34, 34, 0.5);
+}
+
+@font-face {
+    font-family: 'Golos UI';
+    src: url('src/Golos-UI_Regular.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    font-family: 'Golos UI';
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px;
+    border-right: 1px solid var(--border-color);
+    width: 36px;
+}
+
+.nav__icon {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+
+.posts {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 32px;
+    padding: 32px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.post {
+    max-width: 474px;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.post__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post__user {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.post__logo {
+    width: 32px;
+    height: 32px;
+}
+
+.post__username {
+    margin-left: 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.post__edit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.post__edit-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.post__carousel{
+    position: relative;
+    width: 100%;
+    max-height: 474px;
+}
+
+.post__image, .modal__image {
+    width: 100%;
+    height: 474px;
+    display: none;
+}
+
+.post__image_disabled {
+    display: none;
+}
+
+.post__image_active {
+    display: block;
+}
+
+.post__counter {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: var(--image-count-bg);
+    color: var(--count-text);
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+}
+
+.post__counter-disabled {
+    display: none;
+}
+
+.post__arrow, .modal__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.post__arrow-left, .modal__arrow-left {
+    left: 16px;
+}
+
+.post__arrow-disabled, .modal__arrow-disabled {
+    display: none;
+}
+
+.post__arrow-right, .modal__arrow-right {
+    right: 16px;
+}
+
+.post__arrow-icon, .modal__arrow-icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+    backdrop-filter: blur(13px);
+}
+
+.post__arrow-icon_dark, .modal__arrow-icon_dark {
+    opacity: 0.1;
+}
+
+.post__actions {
+    display: flex;
+    align-items: center;
+}
+
+.post__like {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--like-count-bg);
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.post__like-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.post__like-count {
+    margin-left: 8px;
+}
+
+.post__text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 15px;
+    margin: 0;
+}
+
+.post__more {
+    color: var(--expand-text);
+    cursor: pointer;
+}
+
+.post__time {
+    font-size: 14px;
+    color: var(--time-text);
+    margin: 0;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(145, 145, 145, 1);
+}
+
+.modal_disabled {
+    display: none;
+}
+
+.modal_active {
+    display: flex;
+}
+
+.modal__image {
+    width: 636px;
+    height: 636px;
+}
+
+.modal__image_disabled {
+    display: none;
+}
+
+.modal__image_active {
+    display: block;
+}
+
+.modal__carousel {
+    position: relative;
+    max-width: 100%;
+    max-height: 636px;
+}
+
+.modal__counter {
+    color: rgba(255, 255, 255, 1);
+}
+
+.modal__close {
+    background: none;
+    border: none;
+    align-self: flex-end;
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.modal-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 636px;
+    gap: 16px;
+}
+
+.post__more_disabled {
+    display: none; 
+}
