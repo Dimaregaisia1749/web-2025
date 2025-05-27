@@ -141,6 +141,12 @@ async function addPost(postData) {
          
 }
 
+function changePost() {
+    const params = new URLSearchParams(document.location.search);
+    const postId = params.get("id");
+    
+}
+
 contentInput.addEventListener('input', (e) => {
     content = e.target.value;
     updateShareButton();
@@ -165,7 +171,7 @@ shareBtn.addEventListener('click', () => {
     }
 });
 
-
+changePost();
 leftArrow.addEventListener('click', () => showImage(currentIndex - 1));
 rightArrow.addEventListener('click', () => showImage(currentIndex + 1));
 removeButton.addEventListener('click', () => removeImage(currentIndex));

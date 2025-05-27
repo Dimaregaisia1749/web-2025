@@ -1,0 +1,259 @@
+:root {
+    --bg-color: white;
+    --image-count-bg: rgba(34, 34, 34, 0.5);
+    --like-count-bg: rgba(34, 34, 34, 0.05);
+    --border-color: rgba(34, 34, 34, 0.05);
+    --count-text: white;
+    --expand-text: rgba(128, 128, 128, 1);
+    --time-text: rgba(34, 34, 34, 0.5);
+}
+
+@font-face {
+    font-family: 'Golos UI';
+    src: url('src/Golos-UI_Regular.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    font-family: 'Golos UI';
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    height: devi;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px;
+    border-right: 1px solid var(--border-color);
+    width: 36px;
+    min-height: max-content;
+}
+
+.add-post {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 20px;
+    height: 100%;
+    padding-top: 80px;
+}
+
+.add-post_disabled {
+    display: none;    
+}
+
+.nav__icon {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+
+.add-post__carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 474px;
+    height: 474px;
+    background-color: rgb(242, 243, 245);
+    gap: 18px;
+}
+
+.add-post__image-placeholder {
+    width: 82px;
+    height: 82px;
+}
+
+.add-post__image-placeholder_disabled {
+    display: none;
+}
+
+.add-post__image {
+    width: 474px;
+    height: 474px;
+}
+
+.add-post__image_disabled {
+    display: none;
+}
+
+.add-post__image_active {
+    display: block;
+}
+
+.add-post__counter {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: var(--image-count-bg);
+    color: var(--count-text);
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+}
+
+.add-post__arrow {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.add-post__arrow-left {
+    left: 16px;
+}
+
+.add-post__arrow-right {
+    right: 16px;
+}
+
+.add-post__arrow-icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+    backdrop-filter: blur(13px);
+}
+
+.add-post__arrow_disabled {
+    display: none;
+}
+
+.add-post__arrow-icon_dark {
+    opacity: 0.1;
+}
+
+.btn-share {
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    top: 90%;
+    width: 140px;
+    height: 48px;
+    border-radius: 10px;
+    padding-right: 16px;
+    padding-left: 16px;
+    color: white;
+    background-color: black;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.btn-share_disabled {
+    background-color: rgba(180, 180, 180, 1);
+    cursor: default;
+}
+
+.btn-upload {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-upload_disabled {
+    display: none;
+}
+
+.btn-upload_first {
+    width: 143px;
+    height: 48px;
+    border-radius: 10px;
+    background: rgba(34, 34, 34, 1);
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.btn-upload_second {
+    color: rgba(63, 138, 224, 1);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    height: 30px;
+}
+
+.add-post__text {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    border: none;
+    min-width: 474px;
+    min-height: 50px;
+    resize: none;
+}
+
+.add-post__counter {
+    position: absolute;
+    top: 80px;
+    background-color: var(--image-count-bg);
+    color: var(--count-text);
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+}
+
+.add-post__counter_disabled {
+    display: none;
+}
+
+.add-post-result {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.add-post-result_success {
+    color: rgb(0, 95, 5);
+}
+
+.add-post-result_error {
+    color: rgb(124, 0, 0);
+}
+
+.add-post-result__text{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.add-post-result_disabled {
+    display: none;
+}
+
+.remove-button {
+    position: absolute;
+    top: 90px;
+    left: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.remove-button_disabled {
+    display: none;
+}
+
+.remove-button__icon {
+    opacity: 0.5;
+    background: none;
+}

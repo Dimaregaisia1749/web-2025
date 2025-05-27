@@ -11,17 +11,48 @@ function connectDatabase(): PDO
 function savePostToDatabase(PDO $connection, array $postParams): int
 {
     $query = <<<SQL
-        INSERT INTO post (user_id, content, likes)
-        VALUES (?, ?, ?)
+        INSERT INTO post (user_id, content, likes, id)
+        VALUES (?, ?, ?, ?)
         SQL;
     $statement = $connection->prepare($query);
     $statement->execute([
         $postParams['user_id'],
         $postParams['content'],
-        $postParams['likes']
+        $postParams['likes'],
+        array_key_exists('post_id', $postParams) 
+            ? $postParams['post_id'] 
+            : $connection->lastInsertId() 
     ]);
 
     return (int)$connection->lastInsertId();
+}
+
+function deletePostFromDatabase(PDO $connection, array $postParams): int
+{
+    $query = <<<SQL
+        DELETE FROM post
+        WHERE id = ?
+        SQL;
+    $statement = $connection->prepare($query);
+    $statement->execute([
+        $postParams['post_id']
+    ]);
+
+    return (int) $statement->rowCount();
+}
+
+function deletePostImagesFromDatabase(PDO $connection, array $postParams): int
+{
+    $query = <<<SQL
+        DELETE FROM post_image
+        WHERE post_id = ?
+        SQL;
+    $statement = $connection->prepare($query);
+    $statement->execute([
+        $postParams['post_id']
+    ]);
+
+    return (int) $statement->rowCount();
 }
 
 function savePostImageToDatabase(PDO $connection, array $postParams): int
