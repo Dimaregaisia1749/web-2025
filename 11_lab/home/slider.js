@@ -3,9 +3,11 @@ document.querySelectorAll('.post__carousel').forEach(carousel => {
     const prevBtn = carousel.querySelector('.post__arrow-left');
     const nextBtn = carousel.querySelector('.post__arrow-right');
     const counter = carousel.querySelector('.post__counter');
-    const leftArrowIcon = carousel.querySelector('.post__arrow-left').querySelector('.post__arrow-icon');
-    const rightArrowIcon = carousel.querySelector('.post__arrow-right').querySelector('.post__arrow-icon');
+    const leftArrowIcon = prevBtn.querySelector('.post__arrow-icon');
+    const rightArrowIcon = nextBtn.querySelector('.post__arrow-icon');
+
     let currentIndex = 0;
+    
     function showImage(index) {
         currentIndex = (index + images.length) % images.length;
         images.forEach(img => img.classList.remove('post__image_active'));

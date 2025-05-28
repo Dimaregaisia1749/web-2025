@@ -8,17 +8,21 @@ const rightArrowIcon = modal.querySelector('.modal__arrow-right').querySelector(
 document.querySelectorAll('.post__image').forEach(img => {
     img.addEventListener('click', () => {      
         document.body.style.overflow = 'hidden';
+
         const post = img.closest('.post');
         const images = Array.from(post.querySelectorAll('.post__image'));
+
         let currentIndex = 0;
 
         function showImage(index) {
             const modalImages = modal.querySelectorAll('.modal__image');
+            
             currentIndex = (index + modalImages.length) % modalImages.length;
             modalImages.forEach(img => img.classList.remove('modal__image_active'));
             modalImages.forEach(img => img.classList.add('modal__image_disabled'));
             modalImages[currentIndex].classList.add('modal__image_active');
             modalImages[currentIndex].classList.remove('modal__image_disabled');
+
             if (images.length > 1) {
                 modalCounter.textContent = `${currentIndex + 1}/${modalImages.length}`;
                 if (currentIndex === 0) {
