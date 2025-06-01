@@ -197,7 +197,7 @@ body {
     line-height: 18px;
     letter-spacing: -0.15px;
     border: none;
-    min-width: 474px;
+    min-width: 400px;
     min-height: 50px;
     resize: none;
 }

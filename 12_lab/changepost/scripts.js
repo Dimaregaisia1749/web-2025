@@ -23,7 +23,8 @@ const darkArrow = "add-post__arrow-icon_dark"
 
 let currentIndex = 0;
 let images = [];
-let content = '';
+let content = contentInput.textContent.trim();
+contentInput.textContent = content
 
 function updateShareButton() {
     if (images.length > 0 && content.trim() !== '') {
@@ -114,7 +115,7 @@ function removeImage(index) {
 
 async function addPost(postData) {
     try {
-        const response = await fetch('http://localhost:8001/api/add_post/', {
+        const response = await fetch('http://localhost:8001/api/update_post/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -125,25 +126,24 @@ async function addPost(postData) {
         addPostResult.classList.remove("add-post-result_disabled");
 
         if (response.ok) {
-            addPostResultText.textContent = "Пост успешно сохранен!";
+            addPostResultText.textContent = "Пост успешно обновлен!";
             addPostResult.classList.remove("add-post-result_error");
             addPostResult.classList.add("add-post-result_success");
             addPostContainer.classList.add("add-post_disabled");
         } else {
-            addPostResultText.textContent = "Ошибка в сохранении поста!"
+            addPostResultText.textContent = "Ошибка в обновлении поста!"
             addPostResult.classList.add("add-post-result_error");
         }
     } catch (err) {
-        addPostResultText.textContent = "Ошибка в сохранении поста!"
+        addPostResultText.textContent = "Ошибка в обновлении поста!"
         addPostResult.classList.add("add-post-result_error");
       }
          
 }
 
-function changePost() {
-    const params = new URLSearchParams(document.location.search);
-    const postId = params.get("id");
-    
+function loadImages() {
+    const postImages = document.querySelectorAll('.add-post__image');
+    postImages.forEach(postImage => images.push(postImage.currentSrc));
 }
 
 contentInput.addEventListener('input', (e) => {
@@ -161,16 +161,23 @@ fileInput.addEventListener('change', (e) => {
 });
 
 shareBtn.addEventListener('click', () => {
+    let params = new URLSearchParams(document.location.search);
+    let id = parseInt(params.get("id"));
     if (!shareBtn.classList.contains("btn-share_disabled")) {
         const postData = {
             content: content,
-            images: images
+            images: images,
+            post_id: id
         };
+        
         addPost(postData);
     }
 });
 
-changePost();
+loadImages();
+showImage(0);
+updateArrowsAndCounter();
+updateShareButton();
 leftArrow.addEventListener('click', () => showImage(currentIndex - 1));
 rightArrow.addEventListener('click', () => showImage(currentIndex + 1));
 removeButton.addEventListener('click', () => removeImage(currentIndex));
