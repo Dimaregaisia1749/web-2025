@@ -1,0 +1,78 @@
+:root {
+    --bg-color: white;
+    --input-color: #F2F3F5;
+    --btn-color: #222222;
+    --text-color: #222222;
+    --tip-color: #808080;
+    --btn-text-color: white;
+}
+
+
+@font-face {
+    font-family: 'Golos UI';
+    src: url('src/Golos-UI_Regular.ttf');
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Golos UI';
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    top: 50%;
+    transform: translateY(30%);
+}
+
+.login-preview {
+    width: 462px;
+    height: 501px;    
+}   
+
+.login-preview__title {
+    position: relative;
+    margin-top: -600px;
+    margin-left: -50px;
+    font-weight: 700;
+    font-size: 140px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.login-form__tip {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: var(--tip-color);
+}
+
+.login-form__title {
+    color: var(--text-color);
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.login-form__password, .login-form__email {
+    width: 343px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: var(--input-color);
+    border: 0;
+}
+
+.login-form__continue {
+    width: 343px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    cursor: pointer;
+}
