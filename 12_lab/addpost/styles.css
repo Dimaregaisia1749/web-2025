@@ -47,7 +47,8 @@ body {
     transform: translateX(-50%);
     gap: 20px;
     height: 100%;
-    padding-top: 80px;
+    padding-top: 10px;
+    width: 400px;
 }
 
 .add-post_disabled {
@@ -65,8 +66,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 474px;
-    height: 474px;
+    width: 400px;
+    height: 400px;
     background-color: rgb(242, 243, 245);
     gap: 18px;
 }
@@ -81,8 +82,8 @@ body {
 }
 
 .add-post__image {
-    width: 474px;
-    height: 474px;
+    width: 400px;
+    height: 400px;
 }
 
 .add-post__image_disabled {
@@ -256,4 +257,10 @@ body {
 .remove-button__icon {
     opacity: 0.5;
     background: none;
+}
+
+.title {
+    align-self: center;
+    font-size: 20px;
+    margin: 0;
 }

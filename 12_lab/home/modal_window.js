@@ -20,7 +20,7 @@ document.querySelectorAll('.post__image').forEach(img => {
             modalImages[currentIndex].classList.add('modal__image_active');
             modalImages[currentIndex].classList.remove('modal__image_disabled');
             if (images.length > 1) {
-                modalCounter.textContent = `${currentIndex + 1}/${modalImages.length}`;
+                modalCounter.textContent = `${currentIndex + 1} из ${modalImages.length}`;
                 if (currentIndex === 0) {
                     leftArrowIcon.classList.add('modal__arrow-icon_dark');
                     rightArrowIcon.classList.remove('modal__arrow-icon_dark');

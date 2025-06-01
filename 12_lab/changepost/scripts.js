@@ -75,7 +75,6 @@ function updateArrowsAndCounter() {
         imagesCounter.textContent = `${currentIndex + 1} из ${images.length}`;
         arrows.forEach(arrow => arrow.classList.remove('add-post__arrow_disabled'));
         imagesCounter.classList.remove('add-post__counter_disabled');
-        
     }
     else {
         imagesCounter.textContent = '';

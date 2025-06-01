@@ -42,6 +42,7 @@
             ?>
         </div>
     </div>
+    
     <div class="modal modal_disabled" id="modal">
         <div class="modal-wrapper">
             <button class="modal__close">X</button>
