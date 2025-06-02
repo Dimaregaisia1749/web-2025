@@ -25,5 +25,6 @@ if (!$user || ($password != $user['password'])) {
 
 $_SESSION['auth'] = $user['id'];
 http_response_code(200);
-echo json_encode(['message' => 'Login successfully']);
+echo json_encode(['message' => 'Login successfully', 
+                        'user_id' => $user['id']]);
 ?>

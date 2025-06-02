@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<script src="scripts.js" defer></script>
 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="styles.css">
     <title>Login</title>
 </head>
-
 <body>
     <div class="wrapper">
         <div class="login-preview">
             <img src="src/LoginImage.png" class="login-preview__image" alt="Login image">
             <h1 class="login-preview__title">Войти</h1>
         </div>
-        <div class="login-form">
+        <form id="loginForm" class="login-form">
+            <div class="error-message error-message_disabled"></div>
             <div class="data">
                 <p class="email">Электропочта</p>
-                <input type="login-form__email" class="login-form__email" name="email">
+                <input type="email" class="login-form__email" name="email">
                 <p class="login-form__tip">Введите электропочту в формате *****@***.**</p>
+                
                 <p class="login-form__title">Пароль</p>
-                <input type="password" class="login-form__password" name="Password">
+                <input type="password" class="login-form__password" name="password">
             </div>
-            <input type="button" class="login-form__continue" value="Продолжить">
-        </div>
+            <input type="submit" class="login-form__continue" value="Продолжить">
+        </form>
     </div>
 </body>
-
 </html>

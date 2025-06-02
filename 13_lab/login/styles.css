@@ -76,3 +76,20 @@ body {
     color: var(--btn-text-color);
     cursor: pointer;
 }
+
+.error-message {
+    opacity: 1;
+    color: red; 
+    max-height: 30px;   
+    
+    height: 30px;
+    opacity: 1;
+    transition: height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+.error-message_disabled {
+    max-height: 0;
+    height: 0;
+    opacity: 0;
+    transition: height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}

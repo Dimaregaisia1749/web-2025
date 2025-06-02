@@ -13,7 +13,7 @@ $user_id = getAuth();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="styles.css">
-    <title>Login</title>
+    <title>Home</title>
 </head>
 
 <body>
