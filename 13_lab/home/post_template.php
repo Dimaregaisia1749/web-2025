@@ -9,9 +9,11 @@ $post_images = findPostImagesInDatabase($connection, $post['id']);
             <img src="<?= $user['logo_path'] ?>" alt="<?= htmlspecialchars($user['username']) ?>" class="post__logo">
             <span class="post__username"><?= htmlspecialchars($user['username']) ?></span>
         </a>
-        <a href="http://localhost:8001/changepost/?id=<?= $post['id'] ?>" class="post__edit">
-            <img src="src/edit.png" alt="Edit post" class="post__edit-icon">
-        </a>
+        <?php if ($user_id == $post['user_id']): ?>
+            <a href="http://localhost:8001/changepost/?id=<?= htmlspecialchars($post['id']) ?>" class="post__edit">
+                <img src="src/edit.png" alt="Edit post" class="post__edit-icon">
+            </a>
+        <?php endif; ?>
     </div>
 
     <div class="post__carousel">

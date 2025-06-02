@@ -1,3 +1,8 @@
+<?php
+require_once '../api/login/auth_scripts.php';
+authBySession();
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <script src="scripts.js" defer></script>

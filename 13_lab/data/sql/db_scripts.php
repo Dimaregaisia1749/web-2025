@@ -106,6 +106,27 @@ function findUserInDatabase(PDO $connection, int $id): array
     return $row;
 }
 
+function findUserByEmailInDatabase(PDO $connection, string $email): array
+{
+    $query = <<<SQL
+        SELECT *
+        FROM user 
+        WHERE email = ?
+        SQL;
+
+    $statement = $connection->prepare($query);
+    $statement->execute([
+        $email
+    ]);
+    $row = $statement->fetch(PDO::FETCH_ASSOC);
+
+    if (!$row) {
+        throw new RuntimeException("User with email $email not found");
+    }
+
+    return $row;
+}
+
 function findPostImagesInDatabase(PDO $connection, int $id): array
 {
     $query = <<<SQL
@@ -116,6 +137,7 @@ function findPostImagesInDatabase(PDO $connection, int $id): array
 
     $statement = $connection->query($query);
     $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+    
 
     if (!$rows) {
         throw new RuntimeException("Post with id $id have not images");

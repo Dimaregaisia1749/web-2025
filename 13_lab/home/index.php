@@ -1,3 +1,8 @@
+<?php
+require_once '../api/login/auth_scripts.php';
+$user_id = getAuth();
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <script src="slider.js" defer></script>
