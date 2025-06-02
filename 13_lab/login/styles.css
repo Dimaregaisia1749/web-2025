@@ -78,18 +78,28 @@ body {
 }
 
 .error-message {
-    opacity: 1;
-    color: red; 
-    max-height: 30px;   
-    
-    height: 30px;
-    opacity: 1;
+    border-radius: 10px;
+    opacity: 0;
+    background-color: rgba(255, 236, 236, 1);
+    color: rgba(116, 0, 0, 1); 
+    height: 0px;   
+    display: flex;
+    align-items: center;
+}
+
+.error-message__text {
+    margin: 0;
+    margin-left: 10px;
+}
+
+.error-message_hide {
+    height: 0;
+    opacity: 0;
     transition: height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
 }
 
-.error-message_disabled {
-    max-height: 0;
-    height: 0;
-    opacity: 0;
+.error-message_show {
+    height: 40px;
+    opacity: 1;
     transition: height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
 }

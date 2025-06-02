@@ -8,6 +8,7 @@ $user_id = getAuth();
 <script src="slider.js" defer></script>
 <script src="modal_window.js" defer></script>
 <script src="expand.js" defer></script>
+<script src="user_logo.js" defer></script>
 
 <head>
     <meta charset="UTF-8">
@@ -45,6 +46,13 @@ $user_id = getAuth();
                 include 'post_template.php';
             }
             ?>
+        </div>
+
+        <div class="user-wrapper">
+            <div class="user-icon"></div>
+            <button type="button" class="exit">
+                    <img src="src/logout.png" alt="Exit" class="exit__icon">
+            </button>
         </div>
     </div>
     

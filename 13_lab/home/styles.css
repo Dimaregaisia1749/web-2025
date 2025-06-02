@@ -23,6 +23,7 @@ body {
 .wrapper {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .nav {
@@ -273,4 +274,30 @@ body {
 
 .post__more_disabled {
     display: none; 
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+    max-height: 80px;
+    gap: 10px;
+}
+
+.user-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    user-select: none;
+}
+
+.exit__icon {
+    width: 48px;
+    height: 48px;
 }
