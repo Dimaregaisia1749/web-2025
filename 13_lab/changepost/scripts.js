@@ -1,6 +1,3 @@
-const MAX_WIDTH = 474;
-const MAX_HEIGHT = 474;
-
 const fileInput = document.querySelector('.file-input');
 const imagePlaceholder = document.querySelector('.add-post__image-placeholder');
 const btnAddFirst = document.querySelector('.btn-upload_first');
@@ -18,8 +15,8 @@ const rightArrowIcon = rightArrow.querySelector('.add-post__arrow-icon');
 const addPostResult = document.querySelector('.add-post-result');
 const addPostResultText = document.querySelector('.add-post-result__text');
 const removeButton = document.querySelector('.remove-button');
+const body = document.body;
 const darkArrow = "add-post__arrow-icon_dark"
-
 
 let currentIndex = 0;
 let images = [];
@@ -29,7 +26,7 @@ contentInput.textContent = content
 function updateShareButton() {
     if (images.length > 0 && content.trim() !== '') {
         shareBtn.classList.remove('btn-share_disabled');
-    } 
+    }
     else {
         shareBtn.classList.add('btn-share_disabled');
     }
@@ -45,9 +42,9 @@ function showImage(index) {
 
     if (images.length > 1) {
         imagesCounter.textContent = `${currentIndex + 1} из ${postImages.length}`;
-        
+
     } else {
-        
+
     }
 
     if (images.length > 0) {
@@ -94,7 +91,7 @@ function addImages(files) {
             `;
             updateShareButton();
             updateArrowsAndCounter();
-            showImage(images.length-1);
+            showImage(images.length - 1);
         });
         reader.readAsDataURL(file);
     });
@@ -105,16 +102,17 @@ function addImages(files) {
 }
 
 function removeImage(index) {
+    const deletedImage = document.querySelector(`.add-post__image:not(.add-post__image_disabled)`);
     images.splice(index, 1);
-    const deletedImage = document.querySelector(`.add-post__image:not(add-post__image_disabled)`);
     deletedImage.remove();
     updateShareButton();
     updateArrowsAndCounter();
-    showImage(images.length - 1);
+    showImage(index);
 }
 
 async function addPost(postData) {
     try {
+        body.classList.add('body_waiting');
         const response = await fetch('http://localhost:8001/api/update_post/', {
             method: 'POST',
             headers: {
@@ -122,7 +120,6 @@ async function addPost(postData) {
             },
             body: JSON.stringify(postData)
         });
-
         addPostResult.classList.remove("add-post-result_disabled");
 
         if (response.ok) {
@@ -137,8 +134,10 @@ async function addPost(postData) {
     } catch (err) {
         addPostResultText.textContent = "Ошибка в обновлении поста!"
         addPostResult.classList.add("add-post-result_error");
-      }
-         
+    } finally {
+        body.classList.remove('body_waiting');
+    }
+
 }
 
 function loadImages() {
@@ -169,7 +168,7 @@ shareBtn.addEventListener('click', () => {
             images: images,
             post_id: id
         };
-        
+
         addPost(postData);
     }
 });

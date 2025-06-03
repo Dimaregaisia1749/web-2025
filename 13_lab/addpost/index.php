@@ -1,11 +1,15 @@
 <?php
 require_once '../api/login/auth_scripts.php';
 authBySession();
+$user = getUserInfo();
+$user_id = $user['id'];
+$user_email = $user['email'];
 ?>
 
 <!DOCTYPE html>
 <html lang="ru">
 <script src="scripts.js" defer></script>
+<script src="../scripts/user_logo.js" defer></script>   
 
 <head>
     <meta charset="UTF-8">
@@ -22,7 +26,7 @@ authBySession();
                 </a>
             </div>
             <div class="nav__item">
-                <a href="http://localhost:8001/profile/?id=1" class="nav__link">
+                <a href="http://localhost:8001/profile/" class="nav__link">
                     <img src="src/profile.png" alt="Profile" class="nav__icon">
                 </a>
             </div>
@@ -61,6 +65,17 @@ authBySession();
             <input type="file" class="file-input" accept="image/*" multiple style="display: none">
             <textarea class="add-post__text" placeholder="Добавьте подпись..."></textarea>
             <button class="btn-share btn-share_disabled">Поделиться</button>
+        </div>
+
+        <div class="user-wrapper">
+            <div class="user-icon">
+                <?php
+                echo $user_email
+                ?>
+            </div>
+            <button type="button" class="exit">
+                    <img src="src/logout.png" alt="Exit" class="exit__icon">
+            </button>
         </div>
 
     </div>

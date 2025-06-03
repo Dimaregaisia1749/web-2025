@@ -1,6 +1,28 @@
+<?php
+require_once '../api/login/auth_scripts.php';
+authBySession();
+$user = getUserInfo();
+$post_id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, [
+    'filter' => FILTER_CALLBACK,
+    'options' => function ($value) {
+        return (strlen($value) >= 1 && strlen($value) <= 100000) ? $value : false;
+    }
+]);
+
+$connection = connectDatabase();
+$postOwnerId = findPostInDatabase($connection, $post_id)['user_id'];
+if (!($user['id'] == $postOwnerId)) {
+    http_response_code(response_code: 401);
+    exit;
+}
+
+$user_id = $user['id'];
+$user_email = $user['email'];
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <script src="scripts.js" defer></script>
+<script src="../scripts/user_logo.js" defer></script>
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +39,7 @@
                 </a>
             </div>
             <div class="nav__item">
-                <a href="http://localhost:8001/profile/?id=1" class="nav__link">
+                <a href="http://localhost:8001/profile/" class="nav__link">
                     <img src="src/profile.png" alt="Profile" class="nav__icon">
                 </a>
             </div>
@@ -72,9 +94,18 @@
             <textarea class="add-post__text" placeholder="Добавьте подпись..."> <?= $post['content'] ?> </textarea>
             <button class="btn-share">Сохранить изменения</button>
         </div>
-
-    </div>
-    
+        
+        <div class="user-wrapper">
+            <div class="user-icon">
+                <?php
+                echo $user_email
+                ?>
+            </div>
+            <button type="button" class="exit">
+                <img src="src/logout.png" alt="Exit" class="exit__icon">
+            </button>
+        </div>
+    </div>  
 </body>
 
 </html>

@@ -1,6 +1,8 @@
 <?php
 require_once '../api/login/auth_scripts.php';
-$user_id = getAuth();
+$user = getUserInfo();
+$user_id = $user['id'];
+$user_email = $user['email'];
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +10,7 @@ $user_id = getAuth();
 <script src="slider.js" defer></script>
 <script src="modal_window.js" defer></script>
 <script src="expand.js" defer></script>
-<script src="user_logo.js" defer></script>
+<script src="../scripts/user_logo.js" defer></script>
 
 <head>
     <meta charset="UTF-8">
@@ -26,7 +28,7 @@ $user_id = getAuth();
                 </a>
             </div>
             <div class="nav__item">
-                <a href="http://localhost:8001/profile/?id=1" class="nav__link">
+                <a href="http://localhost:8001/profile/" class="nav__link">
                     <img src="src/profile.png" alt="Profile" class="nav__icon">
                 </a>
             </div>
@@ -36,7 +38,7 @@ $user_id = getAuth();
                 </a>
             </div>
         </div>
-
+        
         <div class="posts">
             <?php
             require_once '../data/sql/db_scripts.php';
@@ -49,7 +51,11 @@ $user_id = getAuth();
         </div>
 
         <div class="user-wrapper">
-            <div class="user-icon"></div>
+            <div class="user-icon">
+                <?php
+                echo $user_email
+                ?>
+            </div>
             <button type="button" class="exit">
                     <img src="src/logout.png" alt="Exit" class="exit__icon">
             </button>

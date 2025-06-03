@@ -1,5 +1,5 @@
 <?php
-require_once '../../data/sql/db_scripts.php';
+require_once __DIR__ . '/../login/auth_scripts.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode(['error' => 'Method not allowed. Use POST.']);
@@ -43,7 +43,7 @@ foreach ($images as $img) {
 }
 
 $connection = connectDatabase();
-$userId = 1;
+$userId = authBySession();
 $likes = findPostInDatabase($connection, $post_id)['likes'];
 $postData = [
     'user_id' => $userId,

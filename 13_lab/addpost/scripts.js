@@ -122,7 +122,6 @@ async function addPost(postData) {
             },
             body: JSON.stringify(postData)
         });
-
         addPostResult.classList.remove("add-post-result_disabled");
 
         if (response.ok) {

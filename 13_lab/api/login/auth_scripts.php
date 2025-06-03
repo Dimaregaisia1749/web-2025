@@ -1,9 +1,13 @@
 <?php
-require_once '../data/sql/db_scripts.php';
+
+require __DIR__ . '/../../data/sql/db_scripts.php';
 
 function authBySession()
 {
-    session_start();
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    
     if (!isset($_SESSION['auth'])) {
         http_response_code(401);
         exit;
@@ -22,7 +26,10 @@ function authBySession()
 
 function checkPermissions(int $id)
 {
-    session_start();
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+
     if ((!isset($_SESSION['auth'])) || ($id != $_SESSION['auth'])) {
         http_response_code(401);
         exit;
@@ -31,13 +38,25 @@ function checkPermissions(int $id)
     return $id;
 }
 
-function getAuth()
+function getUserInfo()
 {
-    session_start();
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    
     if (!isset($_SESSION['auth'])) {
-        return -1;
+        $id = -1;
+        $email = -1;
+    } else {
+        $id = $_SESSION['auth'];
+        $connection = connectDatabase();
+        $user = findUserInDatabase($connection, $_SESSION['auth']);
+        $email = $user['email'];
     }
 
-    return $_SESSION['auth'];
+    return [
+        'id' => $id,
+        'email' => $email
+    ];
 }
 ?>

@@ -15,7 +15,7 @@ $data = json_decode($input, true);
 $email = $data['email'];
 $password = $data['password'];
 
-$user = findUserByEmailInDatabase( $connection, $email);
+$user = findUserByEmailInDatabase($connection, $email);
 
 if (!$user || ($password != $user['password'])) {
     http_response_code(response_code: 401);
@@ -25,6 +25,9 @@ if (!$user || ($password != $user['password'])) {
 
 $_SESSION['auth'] = $user['id'];
 http_response_code(200);
-echo json_encode(['message' => 'Login successfully', 
-                        'user_id' => $user['id']]);
+echo json_encode([
+    'message' => 'Login successfully',
+    'user_id' => $user['id'],
+    'email' => $email
+]);
 ?>

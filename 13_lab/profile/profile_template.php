@@ -3,6 +3,11 @@ require_once '../data/sql/db_scripts.php';
 $connection = connectDatabase();
 $user = findUserInDatabase($connection, $id);
 $posts = findAllUsersPosts($connection, $id);
+if (empty($user)) {
+    $id = 1;
+    $user = findUserInDatabase($connection, $id);
+    $posts = findAllUsersPosts($connection, $id);
+}
 ?>
 <div class="user-profile">
     <div class="user-profile__info">

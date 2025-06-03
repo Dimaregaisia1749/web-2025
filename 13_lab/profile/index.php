@@ -1,5 +1,14 @@
+<?php
+require_once '../api/login/auth_scripts.php';
+$user = getUserInfo();
+$user_id = $user['id'];
+$user_email = $user['email'];
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
+<script src="../scripts/user_logo.js" defer></script>
+
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +26,7 @@
                 </a>
             </div>
             <div class="nav__item">
-                <a href="http://localhost:8001/profile/?id=1" class="nav__link">
+                <a href="http://localhost:8001/profile/" class="nav__link">
                     <img src="src/profile_active.png" alt="Profile" class="nav__icon">
                 </a>
             </div>
@@ -27,6 +36,7 @@
                 </a>
             </div>
         </div>
+
         <?php
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, [
             'filter' => FILTER_CALLBACK,
@@ -34,11 +44,24 @@
                 return (strlen($value) >= 1 && strlen($value) <= 100000) ? $value : false;
             }
         ]);
-        if ($id === false) {
-            header("Location: http://localhost:8001/home/");
+        
+        if ($id === null) {
+            $id = $user_id;
         }
         include 'profile_template.php';
         ?>
+
+        <div class="user-wrapper">
+            <div class="user-icon">
+                <?php
+                echo $user_email
+                ?>
+            </div>
+            <button type="button" class="exit">
+                    <img src="src/logout.png" alt="Exit" class="exit__icon">
+            </button>
+        </div>
+
     </div>
 </body>
 

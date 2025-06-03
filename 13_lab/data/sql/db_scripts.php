@@ -70,7 +70,7 @@ function savePostImageToDatabase(PDO $connection, array $postParams): int
     return (int) $connection->lastInsertId();
 }
 
-function findPostInDatabase(PDO $connection, int $id): array
+function findPostInDatabase(PDO $connection, int $id)
 {
     $query = <<<SQL
         SELECT *
@@ -81,14 +81,10 @@ function findPostInDatabase(PDO $connection, int $id): array
     $statement = $connection->query($query);
     $row = $statement->fetch(PDO::FETCH_ASSOC);
 
-    if (!$row) {
-        throw new RuntimeException("Post with id $id not found");
-    }
-
     return $row;
 }
 
-function findUserInDatabase(PDO $connection, int $id): array
+function findUserInDatabase(PDO $connection, int $id)
 {
     $query = <<<SQL
         SELECT *
@@ -99,14 +95,10 @@ function findUserInDatabase(PDO $connection, int $id): array
     $statement = $connection->query($query);
     $row = $statement->fetch(PDO::FETCH_ASSOC);
 
-    if (!$row) {
-        throw new RuntimeException("User with id $id not found");
-    }
-
     return $row;
 }
 
-function findUserByEmailInDatabase(PDO $connection, string $email): array
+function findUserByEmailInDatabase(PDO $connection, string $email)
 {
     $query = <<<SQL
         SELECT *
@@ -120,14 +112,10 @@ function findUserByEmailInDatabase(PDO $connection, string $email): array
     ]);
     $row = $statement->fetch(PDO::FETCH_ASSOC);
 
-    if (!$row) {
-        throw new RuntimeException("User with email $email not found");
-    }
-
     return $row;
 }
 
-function findPostImagesInDatabase(PDO $connection, int $id): array
+function findPostImagesInDatabase(PDO $connection, int $id)
 {
     $query = <<<SQL
         SELECT *
@@ -137,16 +125,11 @@ function findPostImagesInDatabase(PDO $connection, int $id): array
 
     $statement = $connection->query($query);
     $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-    
-
-    if (!$rows) {
-        throw new RuntimeException("Post with id $id have not images");
-    }
 
     return $rows;
 }
 
-function findAllPosts(PDO $connection): array
+function findAllPosts(PDO $connection)
 {
     $query = <<<SQL
         SELECT * 
@@ -160,7 +143,7 @@ function findAllPosts(PDO $connection): array
     return $rows;
 }
 
-function findAllUsersPosts(PDO $connection, int $id): array
+function findAllUsersPosts(PDO $connection, int $id)
 {
     $query = <<<SQL
         SELECT * 
